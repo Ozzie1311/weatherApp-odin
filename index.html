@@ -6,6 +6,21 @@
   <title>Weather - App</title>
 </head>
 <body>
-  <h1>Hola mundo desde js</h1>
+  <form id="form">
+    <div class="container">
+      <label for="location-input">Indica la ubicación</label>
+      <input type="text" id="location-input">
+    </div>
+    <div class="container">
+      <button>Search</button>
+    </div>
+  </form>
+  <div class="forecast-container">
+    <p>Location: <span id="location-span"></span></p>
+    <p>Temperature: <span id="location-temperature"></span></p>
+    <p>Forecast: <span id="location-forecast"></span></p>
+  </div>
+
+  <script src="index.js"></script>
 </body>
 </html>

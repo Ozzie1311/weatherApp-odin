@@ -1,7 +1,18 @@
+const form = document.querySelector('#form');
+const locationInput = document.querySelector('#location-input');
+const locationTemperature = document.querySelector('#location-temperature');
+const locationForecast = document.querySelector('#location-forecast');
+const locationSpan = document.querySelector('#location-span');
 
-async function fetchWeather () {
+const API = {
+  key: '2RCJL9S6D98FPFZN6ZSPVFVY3',
+}
+
+
+
+async function fetchWeather (key, location) {
   try {
-    let response = await fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Maturin?unitGroup=metric&key=2RCJL9S6D98FPFZN6ZSPVFVY3&contentType=json');
+    let response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=${key}&contentType=json`);
     let weatherData = await response.json();
     let information =  {
       address: weatherData.resolvedAddress,
@@ -14,7 +25,18 @@ async function fetchWeather () {
   }
 };
 
-function getData (fetchWeather) {
-  fetchWeather().then(information => console.log(information.address, information.conditions));
-};
-getData(fetchWeather);
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  function getData (fetchWeather) {
+    fetchWeather(API.key, locationInput.value).then((information) => {
+      locationSpan.textContent = information.address;
+      locationTemperature.textContent = information.datetime;
+      locationForecast.textContent = information.conditions;
+    })
+  };
+  getData(fetchWeather);
+
+  
+});
+
