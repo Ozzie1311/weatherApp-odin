@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  color: white;
+}
+
+.main {
+  max-width: 480px;
+  margin: 15px auto;
+  padding: 20px;
+  background-color: #213555;
+  border-radius: 6px;
+}
+
+#form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  display: flex;
+  gap: 2px;
+  border: 1px solid blue;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.main-information-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#cityname {
+  display: block;
+  text-align: center;
+}
+
+#temperature-span {
+  color: #98D8EF;
+  font-size: 3rem;
+}
+
+.time-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.statistics-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 6px;
+  gap: 2px;
+}
+
+#wind-number, #humidity-number {
+  color: #98D8EF;
+  font-size: 1.3rem;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  background-color: #3E5879;
+}
+
+/* .stats-container > span {
+  display: block;
+} */

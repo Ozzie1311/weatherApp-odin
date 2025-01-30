@@ -4,22 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather - App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a4c5cc7e57.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <form id="form">
-    <div class="container">
-      <label for="location-input">Indica la ubicación</label>
-      <input type="text" id="location-input">
+  <main class="main">
+     <form id="form">
+      <div class="form-container">
+        <input type="text" id="location-input" placeholder="Search city...">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </form>
+    <div class="time-container">
+      <span id="time-span"></span>
+      <span id="date-span"></span>
     </div>
-    <div class="container">
-      <button>Search</button>
+    <div class="img-container">
+      <img id="forecast-img" src="./assets/clear.png" alt="img" width="200" height="200">
     </div>
-  </form>
-  <div class="forecast-container">
-    <p>Location: <span id="location-span"></span></p>
-    <p>Temperature: <span id="location-temperature"></span></p>
-    <p>Forecast: <span id="location-forecast"></span></p>
-  </div>
+    <div class="main-information-content">
+      <div class="temperature-container">
+        <span id="temperature-span"></span>
+      </div>
+    <div class="cityname-container">
+      <span id="cityname"></span>
+    </div>
+    <div class="forecast-container">
+      <span id="forecast-span"></span>
+    </div>
+    </div>
+
+    <div class="statistics-container">
+      <div class="stats-container">
+        <span id="wind-number"></span>
+        <span id="wind-icon"></span>
+        <span class="description"></span>
+      </div>
+      <div class="stats-container">
+        <span id="humidity-number"></span>
+        <span id="humidity-icon"></span>
+        <span class="description"></span>
+      </div>
+      <div class="stats-container">
+        <span id="pressure-number"></span>
+        <span id="pressure-icon"></span>
+        <span class="description"></span>
+      </div>
+      
+    </div>
+  </main>
 
   <script src="index.js"></script>
 </body>
