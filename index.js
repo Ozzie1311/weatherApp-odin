@@ -10,6 +10,8 @@ const windNumber = document.querySelector('#wind-number');
 const windIcon = document.querySelector('#wind-icon');
 const humidityNumber = document.querySelector('#humidity-number');
 const humidityIcon = document.querySelector('#humidity-icon');
+const humidityDescription = document.createElement('span');
+const windDescription = document.createElement('span');
 
 
 const API = {
@@ -39,25 +41,54 @@ async function fetchWeather (key, location) {
   }
 };
 
+locationInput.value = 'Maturin';
+getData(fetchWeather);
+
+
 form.addEventListener('submit', (event) => {
   event.preventDefault();
+  getData(fetchWeather);
+});
 
-  function getData (fetchWeather) {
+function setImage (object) {
+
+  if (object.conditions === 'Partially cloudy') {
+        forecastImg.src = "./assets/partially-cloudy.png";
+      } else if (object.conditions === 'Clear') {
+        forecastImg.src = "./assets/clear.png";
+      } else if (object.conditions === 'Rain, Partially cloudy') {
+        forecastImg.src = "./assets/rain.png";
+      } else if (object.conditions === 'Overcast') {
+        forecastImg.src = "./assets/overcast.png";
+      };
+}
+
+function getData (fetchWeather) {
+
     fetchWeather(API.key, locationInput.value).then((information) => {
       temperature.textContent = `${information.temperature}°C`;
       cityname.textContent = information.address;
       forecastSpan.textContent = information.conditions;
       timeSpan.textContent = information.time;
       dateSpan.textContent = information.datetime;
-      windNumber.textContent = information.wind;
+      windNumber.textContent = `${information.wind} km/h`;
       windIcon.innerHTML = `<i class="fa-solid fa-wind"></i>`;
-      humidityNumber.textContent = information.humidity;
+      humidityNumber.textContent = `${information.humidity}%`;
       humidityIcon.innerHTML = `<i class="fa-solid fa-droplet"></i>`;
+
+      setImage(information);
+
+      humidityDescription.classList.add('description');
+      humidityDescription.textContent = 'Humidity';
+
+      const humidityContainer = document.querySelector('#humidity');
+      humidityContainer.append(humidityDescription);
+
+      windDescription.classList.add('description');
+      windDescription.textContent = 'Wind Flow';
+
+      const windContainer = document.querySelector('#wind');
+      windContainer.append(windDescription);
       console.log(information);
     })
   };
-  getData(fetchWeather);
-
-  
-});
-

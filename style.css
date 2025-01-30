@@ -26,12 +26,57 @@ body {
 .form-container {
   display: flex;
   gap: 2px;
-  border: 1px solid blue;
+}
+
+.form-container > button {
+  background-color: #3E5879;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 6px;
+  color: #98D8EF;
+  cursor: pointer;
+}
+
+/* .form-container > button:focus {
+  border: 1px solid #3E5879;
+} */
+
+#location-input {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background-color: #98D8EF;
+  color: #213555;
+  font-weight: 600;
+}
+
+#location-input::placeholder {
+  color: #3E5879;
+}
+
+#location-input:focus {
+  border: 1px solid #3E5879;
 }
 
 .img-container {
   display: flex;
   justify-content: center;
+  
+}
+
+.another-container {
+  background-color: #3E5879;
+  padding: 10px 15px;
+  border-radius: 6px;
+  flex-grow: 1;
+  text-align: center;
+}
+
+#date-span, #time-span {
+  color: #98D8EF;
+  font-size: 1rem;
 }
 
 .main-information-content {
@@ -39,6 +84,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 #cityname {
@@ -52,9 +98,12 @@ body {
 }
 
 .time-container {
+  margin-top: 15px;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
+  padding: 10px;
+  gap: 2px;
+
 }
 
 .statistics-container {
@@ -76,6 +125,9 @@ body {
   align-items: center;
   flex-grow: 1;
   background-color: #3E5879;
+  border-radius: 6px;
+  padding: 5px 0px;
+  gap: 5px;
 }
 
 /* .stats-container > span {
