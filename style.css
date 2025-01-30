@@ -6,15 +6,19 @@
 
 body {
   font-family: sans-serif;
-  color: white;
+  color: #ddd;
+  font-weight: 600;
+  min-height: 100vh;
+  background-color: #98D8EF;
 }
 
 .main {
   max-width: 480px;
-  margin: 15px auto;
+  margin: 30px auto;
   padding: 20px;
   background-color: #213555;
   border-radius: 6px;
+  box-shadow: 0px 0px 10px 3px #3E5879;
 }
 
 #form {
@@ -26,6 +30,7 @@ body {
 .form-container {
   display: flex;
   gap: 2px;
+  width: 80%;
 }
 
 .form-container > button {
@@ -38,9 +43,27 @@ body {
   cursor: pointer;
 }
 
-/* .form-container > button:focus {
-  border: 1px solid #3E5879;
-} */
+.temperature-container {
+  display: flex;
+  gap: 25px;
+  margin-top: 15px;
+}
+
+.temperature-container > button {
+  background-color: #3E5879;
+  border: none;
+  color: #98D8EF;
+  padding: 0 25px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#forecast-span {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
 
 #location-input {
   padding: 8px;
@@ -50,6 +73,7 @@ body {
   background-color: #98D8EF;
   color: #213555;
   font-weight: 600;
+  width: 100%;
 }
 
 #location-input::placeholder {
@@ -84,7 +108,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 #cityname {
@@ -112,6 +136,7 @@ body {
   padding: 10px;
   border-radius: 6px;
   gap: 2px;
+  margin-top: 15px;
 }
 
 #wind-number, #humidity-number {
